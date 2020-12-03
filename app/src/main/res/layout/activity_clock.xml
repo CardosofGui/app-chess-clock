@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Clock">
+
+    <RelativeLayout
+        android:id="@+id/btnUser2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#DFFF7F3B"
+        android:clickable="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtCronometro2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minutos e segundos"
+            android:textAlignment="center"
+            android:textSize="58sp" />
+
+        <TextView
+            android:id="@+id/txtMilisegundos2"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtCronometro2"
+            android:text="000"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/txtCronometro2"/>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/reload" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/exit" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/btnUser1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#DFFF7F3B"
+        android:clickable="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txtCronometro1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minutos e segundos"
+            android:textAlignment="center"
+            android:textSize="58sp" />
+
+        <TextView
+            android:id="@+id/txtMilisegundos1"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtCronometro1"
+            android:text="000"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/txtCronometro1"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
