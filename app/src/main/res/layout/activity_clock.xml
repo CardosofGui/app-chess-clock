@@ -28,12 +28,12 @@
 
         <TextView
             android:id="@+id/txtMilisegundos2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtCronometro2"
+            android:layout_toRightOf="@+id/txtCronometro2"
             android:text="000"
-            android:textSize="18sp"
-            android:layout_width="wrap_content"
-            android:layout_toRightOf="@+id/txtCronometro2"/>
+            android:textSize="18sp" />
 
 
     </RelativeLayout>
@@ -45,12 +45,14 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/imgReload"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/reload" />
 
         <ImageView
+            android:id="@+id/imgSair"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -77,12 +79,12 @@
 
         <TextView
             android:id="@+id/txtMilisegundos1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/txtCronometro1"
+            android:layout_toRightOf="@+id/txtCronometro1"
             android:text="000"
-            android:textSize="18sp"
-            android:layout_width="wrap_content"
-            android:layout_toRightOf="@+id/txtCronometro1"/>
+            android:textSize="18sp" />
 
 
     </RelativeLayout>

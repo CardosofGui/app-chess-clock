@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ public class Clock extends AppCompatActivity implements View.OnClickListener {
 
     RelativeLayout btnUser1, btnUser2;
     TextView txtCronometro2, txtMilisegundos2, txtCronometro1, txtMilisegundos1;
+    ImageView imgReload, imgSair;
 
     boolean timeRunning1;
     boolean timeRunning2;
@@ -30,6 +32,8 @@ public class Clock extends AppCompatActivity implements View.OnClickListener {
     long tempoDecorrido1;
     long tempoDecorrido2;
     long acrescimo;
+
+    private String tempo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +47,8 @@ public class Clock extends AppCompatActivity implements View.OnClickListener {
         txtMilisegundos2 = findViewById(R.id.txtMilisegundos2);
         txtCronometro1 = findViewById(R.id.txtCronometro1);
         txtMilisegundos1 = findViewById(R.id.txtMilisegundos1);
-
+        imgReload = findViewById(R.id.imgReload);
+        imgSair = findViewById(R.id.imgSair);
 
         btnUser1.setOnClickListener(this);
         btnUser2.setOnClickListener(this);
@@ -93,8 +98,13 @@ public class Clock extends AppCompatActivity implements View.OnClickListener {
             acrescimo = tempoAcrescimo*1000;
         }
 
-        txtCronometro1.setText(textoCronometro(tempoDecorrido1));
-        txtCronometro2.setText(textoCronometro(tempoDecorrido2));
+        tempo = textoCronometro(tempoDecorrido1);
+
+        txtCronometro1.setText(tempo);
+        txtCronometro2.setText(tempo);
+
+        imgSair.setOnClickListener(this);
+        imgReload.setOnClickListener(this);
     }
 
     @SuppressLint("ResourceAsColor")
@@ -124,6 +134,21 @@ public class Clock extends AppCompatActivity implements View.OnClickListener {
                     startTimer1(tempoDecorrido1);
                     trocarCor();
                 }
+                break;
+
+            case R.id.imgReload:
+                countDownTimer1.cancel();
+                countDownTimer2.cancel();
+                txtCronometro1.setText(tempo);
+                txtCronometro2.setText(tempo);
+                txtMilisegundos2.setText("000");
+                txtMilisegundos1.setText("000");
+                btnUser1.setBackgroundColor(getResources().getColor(R.color.clickOff));
+                btnUser2.setBackgroundColor(getResources().getColor(R.color.clickOff));
+                break;
+
+            case R.id.imgSair:
+                finish();
                 break;
         }
     }
