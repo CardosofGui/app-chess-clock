@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnPersonalizado = findViewById(R.id.btnPersonalizado);
 
 
+
         btnBullet1.setOnClickListener(this);
         btnBullet2.setOnClickListener(this);
         btnBullet3.setOnClickListener(this);
